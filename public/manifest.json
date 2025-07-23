@@ -1,0 +1,27 @@
+{
+  "name": "Akapack - Solusi Kemasan Custom & Mesin Pengemasan",
+  "short_name": "Akapack",
+  "description": "Penyedia terpercaya kemasan custom, mesin pengemasan otomatis, dan layanan percetakan untuk UKM Indonesia",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "id",
+  "dir": "ltr"
+} 

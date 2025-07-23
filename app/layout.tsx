@@ -8,13 +8,29 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Akapack - Kemasan Custom Berkualitas untuk UKM Indonesia",
+  title: {
+    default: "Akapack - Solusi Kemasan Custom & Mesin Pengemasan untuk UKM Indonesia",
+    template: "%s | Akapack"
+  },
   description:
-    "Solusi kemasan paperfoil custom terbaik untuk UKM Indonesia. Desain menarik, harga terjangkau, kualitas premium. Pesan sekarang!",
-  keywords: "kemasan custom, paperfoil, UKM Indonesia, packaging, standing pouch, sachet, ziplock",
-  authors: [{ name: "Akapack" }],
-  creator: "Akapack",
-  publisher: "Akapack",
+    "Penyedia terpercaya kemasan custom, mesin pengemasan otomatis, dan layanan percetakan untuk UKM Indonesia. Solusi B2B berkualitas tinggi, harga kompetitif, dan layanan profesional.",
+  keywords: [
+    "kemasan custom indonesia",
+    "mesin pengemasan otomatis",
+    "standing pouch custom",
+    "mesin pengisi cairan",
+    "kemasan paperfoil",
+    "solusi kemasan UKM",
+    "mesin packaging indonesia",
+    "percetakan kemasan",
+    "supplier kemasan B2B",
+    "mesin sealing otomatis"
+  ].join(", "),
+  authors: [{ name: "Akapack Indonesia", url: "https://akapack.com" }],
+  creator: "Akapack Indonesia",
+  publisher: "Akapack Indonesia",
+  category: "Business & Industrial",
+  classification: "Manufacturing & Packaging Solutions",
   formatDetection: {
     email: false,
     address: false,
@@ -23,28 +39,31 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://akapack.com'),
   alternates: {
     canonical: '/',
+    languages: {
+      'id-ID': '/',
+    },
   },
   openGraph: {
-    title: "Akapack - Kemasan Custom Berkualitas untuk UKM Indonesia",
-    description: "Solusi kemasan paperfoil custom terbaik untuk UKM Indonesia",
+    title: "Akapack - Solusi Kemasan Custom & Mesin Pengemasan untuk UKM Indonesia",
+    description: "Penyedia terpercaya kemasan custom, mesin pengemasan otomatis, dan layanan percetakan untuk UKM Indonesia",
     type: "website",
     locale: "id_ID",
-    siteName: "Akapack",
+    siteName: "Akapack Indonesia",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/images/akapack-hero-packaging-solutions.webp",
         width: 1200,
         height: 630,
-        alt: "Akapack - Kemasan Custom Berkualitas",
+        alt: "Akapack - Solusi Kemasan Custom dan Mesin Pengemasan Terpercaya",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Akapack - Kemasan Custom Berkualitas untuk UKM Indonesia",
-    description: "Solusi kemasan paperfoil custom terbaik untuk UKM Indonesia",
-    images: ["/og-image.jpg"],
-    creator: "@akapack",
+    title: "Akapack - Solusi Kemasan Custom & Mesin Pengemasan untuk UKM Indonesia",
+    description: "Penyedia terpercaya kemasan custom, mesin pengemasan otomatis, dan layanan percetakan untuk UKM Indonesia",
+    images: ["/images/akapack-hero-packaging-solutions.webp"],
+    creator: "@akapack_id",
   },
   robots: {
     index: true,
@@ -60,7 +79,10 @@ export const metadata: Metadata = {
   verification: {
     google: "google-site-verification-code", // Ganti dengan kode verifikasi Google Search Console Anda
   },
-  generator: 'v0.dev'
+  other: {
+    'google-site-verification': 'your-google-verification-code',
+    'msvalidate.01': 'your-bing-verification-code',
+  }
 }
 
 export default function RootLayout({
@@ -72,10 +94,47 @@ export default function RootLayout({
     <html lang="id">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#2563eb" />
+        <meta name="geo.region" content="ID" />
+        <meta name="geo.country" content="Indonesia" />
+        <meta name="ICBM" content="-6.2088, 106.8456" />
+        <meta name="geo.position" content="-6.2088;106.8456" />
+        <meta name="geo.placename" content="Jakarta, Indonesia" />
+        
+        {/* Business Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Akapack Indonesia",
+              "url": "https://akapack.com",
+              "logo": "https://akapack.com/images/akapack-logo.webp",
+              "description": "Penyedia terpercaya kemasan custom, mesin pengemasan otomatis, dan layanan percetakan untuk UKM Indonesia",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ID",
+                "addressRegion": "Jakarta"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+62-xxx-xxxx-xxxx",
+                "contactType": "customer service",
+                "availableLanguage": ["Indonesian", "English"]
+              },
+              "sameAs": [
+                "https://www.instagram.com/akapack_id",
+                "https://www.linkedin.com/company/akapack"
+              ]
+            })
+          }}
+        />
+        
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="canonical" href="https://akapack.com" />
       </head>
       <body className={inter.className}>
         <Header />
